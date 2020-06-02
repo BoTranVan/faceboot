@@ -14,7 +14,7 @@
         "facebook-chat-api": "^1.4.0",
         "fb": "^2.0.0",
         "jade": "~1.11.0",
-        "morgan": "~1.9.0",
+        "morgan": "~1.9.1",
         "serve-favicon": "~2.4.5"
     }
 }
