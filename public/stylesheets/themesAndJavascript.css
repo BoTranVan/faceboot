@@ -1,0 +1,19 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	/*background: #000;*/
+	background: url('/images/2vOXiPV.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+canvas {
+	display: block;
+	vertical-align: bottom;
+}
+#particles-js, #canvas {
+	position: fixed;
+	border: 0px solid black;
+	box-sizing: border-box;
+	color: white;
+}

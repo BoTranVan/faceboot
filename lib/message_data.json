@@ -1,0 +1,29 @@
+{
+    "hi": [{
+        "preferred": 1,
+        "answer": "?"
+    }, {
+        "preferred": 2,
+        "answer": "hi cc"
+    }, {
+        "preferred": 3,
+        "answer": "hi cai lol"
+    }, {
+        "preferred": 4,
+        "answer": "bien"
+    }],
+    "clgt": [{
+        "preferred": 1,
+        "answer": "?"
+    }, {
+        "preferred": 2,
+        "answer": "hoi cai lol"
+    }, {
+        "preferred": 3,
+        "answer": "ke me t"
+    }, {
+        "preferred": 4,
+        "answer": "bien"
+    }]
+}
+

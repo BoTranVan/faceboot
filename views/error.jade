@@ -1,0 +1,18 @@
+extends layout
+
+block body
+
+    .container-fluid
+        pre
+            h1(style={'text-align': 'center'}) #{error.status}
+            pre.alert.alert-warning
+                a.close(data-dismiss='alert', aria-label='close') ×
+                | #{message}
+
+            //- if error.status
+            //-     h2.alert.alert-warning
+            //-         a.close(data-dismiss='alert', aria-label='close') ×
+            //-         | #{error.status}
+            //- pre.alert.alert-info
+            //-     a.close(data-dismiss='alert', aria-label='close') ×
+            //-     | #{error.stack}

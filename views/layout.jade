@@ -1,0 +1,13 @@
+include mixins/gen-form
+include mixins/gen-tables-friends
+
+doctype html
+html
+    head
+        include includes/header
+    body(style={"font-family": "'PT Sans', sans-serif !important"})
+        canvas#canvas
+            script(src='./javascripts/particlesjs.js')
+        include includes/navigator
+        .container(style={"background": "rgba(255,255,255,.18)", "border": "1px solid rgba(238,238,238,.08)", "padding-top": "15px", "margin-top": "30px"})
+            block body

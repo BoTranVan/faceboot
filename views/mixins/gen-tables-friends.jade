@@ -1,0 +1,37 @@
+//- This mixin using show a picture get data from facebook
+
+mixin tableFriends(res)
+    h2 Filterable friend list
+    p Please enter your friend's name to filter
+    input.form-control#filterFriends(type="text", placeholder="Search..")
+    br
+    table.table.table-hover
+        thread
+            tr
+                th(style={"text-align": "center"}) userID
+                th(style={"text-align": "center"}) userName
+                th(style={"text-align": "center"}) fullName
+                th(style={"text-align": "center"}) gender
+        tbody#tableFriends
+            if res
+                for data in res.data
+                    tr
+                        td(style={"text-align": "center"})
+                            img(src=data.picture.data.url) 
+                            | #{data.id}
+                        td(style={"text-align": "center"}) #{data.username}
+                        td(style={"text-align": "center"}) #{data.name}
+                        td(style={"text-align": "center"})  #{data.gender}
+        tfoot
+            if res
+                td(style={"text-align": "center"}, colspan=3) 
+                    a(href=res.paging.next) Next >>
+    script.
+        $(document).ready(function(){
+            $("#filterFriends").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#tableFriends tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });

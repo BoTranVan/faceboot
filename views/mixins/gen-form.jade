@@ -1,0 +1,114 @@
+//- Mixin
+mixin formAuthentication
+    .panel.panel-default
+        .panel-heading
+            //- h3.panel-title
+            //-     strong Login Account
+        .panel-body
+            form.form-horizontal(role="form", action="/authentication", method="POST")
+                .form-group
+                    .col-sm-12
+                        //- label.control-label(for='__userToken') Email:
+                        .input-group
+                            span.input-group-addon
+                                i.fas.fa-terminal
+                            input#__userToken.form-control(type='text', name='__userToken', placeholder='Paste your token in here', required)
+                        .input-group.text-warning
+                            | !{error}
+                .form-group
+                    .col-sm-12
+                        button.btn.btn-info.btn-block(type='submit')
+                            i.fa.fa-sign-in(aria-hidden='true')
+                            |    Submit
+
+
+
+mixin formLogin
+    .col-md-12
+        .panel.panel-default
+            .panel-heading
+                h3.panel-title
+                    strong Login Account
+            .panel-body
+                form.form-horizontal(role="form", action="/login", method="POST")
+                    .form-group
+                        .col-sm-12
+                            label.control-label(for='__userEmail') Email:
+                            .input-group
+                                span.input-group-addon
+                                    i.fa.fa-envelope-o.fa-fw
+                                input#__userEmail.form-control(type='email', name='__userEmail', placeholder='Enter email', required)
+                    .form-group
+                        .col-sm-12
+                            label.control-label(for='__userPassword') Password:
+                            .input-group
+                                span.input-group-addon
+                                    i.fa.fa-key.fa-fw
+                                input#__userPassword.form-control(type='password', name='__userPassword', placeholder='Enter password', required)
+                    .form-group
+                        .col-sm-12
+                            .checkbox
+                                label
+                                    input(type='checkbox')
+                                    |  Remember me
+                    .form-group
+                        .col-sm-12
+                            button.btn.btn-info.btn-block(type='submit')
+                                i.fa.fa-sign-in(aria-hidden='true')
+                                |    Login
+                            //- button.btn.btn-danger.btn-block(type='reset')
+                            //-     if block
+                            //-         i.fa.fa-question(aria-hidden='true')
+                            //-         |   Re-password
+                            //-     else
+                            //-         i.fa.fa-undo(aria-hidden='true')
+                            //-         |   Reset
+
+
+//- //- Get user data
+//- mixin formDoActions
+//-     .col-md-12
+//-         .panel.panel-default
+//-             .panel-heading
+//-                 h3.panel-title
+//-                     strong Choose
+//-             .panel-body
+//-                 form.form-horizontal(role="form", action="/doaction", method="POST")
+//-                     .form-group
+//-                         .col-sm-12
+//-                             label.control-label(for='__userId') Object ID:
+//-                             .input-group
+//-                                 span.input-group-addon
+//-                                     i.fa.fa-envelope-o.fa-fw
+//-                                 input#__userId.form-control(type='"text', name='__userId', placeholder='Enter object id, maybe id of user, post, ...', required)
+//-                     .form-group
+//-                         .col-sm-12
+//-                             label.control-label(for='__userComment') Comment:
+//-                             .input-group
+//-                                 span.input-group-addon
+//-                                     i.fa.fa-envelope-o.fa-fw
+//-                                 input#__userComment.form-control(type='"text', name='__userComment', placeholder='Enter content of your comment', required)
+//-                     .form-group
+//-                         .col-sm-12
+//-                             label.control-label(for='reaction') Type react:
+//-                             .input-group
+//-                                 select.control-label#reaction(name='reaction')
+//-                                     option(value='NONE') NONE
+//-                                     option(value='LIKE') LIKE
+//-                                     option(value='LOVE') LOVE
+//-                                     option(value='HAHA') HAHA
+//-                                     option(value='HUHU') HUHU
+//-                                     option(value='WOW') WOW
+//-                                     option(value='ANGRY') ANGRY
+//-                     .form-group
+//-                         .col-sm-12
+//-                             button.btn.btn-info.btn-block(type='submit')
+//-                                 i.fa.fa-sign-in(aria-hidden='true')
+//-                                 |    Do
+//-                             //- button.btn.btn-danger.btn-block(type='reset')
+//-                             //-     if block
+//-                             //-         i.fa.fa-question(aria-hidden='true')
+//-                             //-         |   Re-password
+//-                             //-     else
+//-                             //-         i.fa.fa-undo(aria-hidden='true')
+//-                             //-         |   Reset

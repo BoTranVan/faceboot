@@ -1,0 +1,75 @@
+//- Content of navigations
+nav.navbar.navbar-default(role='navigation')
+        .container-fluid
+            // Brand and toggle get grouped for better mobile display
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
+                    span.sr-only
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='#') Faceboot
+            // Collect the nav links, forms, and other content for toggling
+            .collapse.navbar-collapse.navbar-ex1-collapse
+                form.navbar-form.navbar-left(role='form')
+                    .form-group.has-feedback
+                        input.form-control(type='text', placeholder='See more..')
+                        span.glyphicon.glyphicon-search.form-control-feedback(aria-hidden='true')
+                ul.nav.navbar-nav.navbar-right
+                    unless isAnonymous
+                        li.dropdown
+                            a.dropdown-toggle(href='#', data-toggle='dropdown')
+                                | Menu
+                                b.caret
+                            ul.dropdown-menu
+                                li
+                                    a(href='#')
+                                        span.glyphicon.glyphicon-link
+                                        |    Action
+                                li
+                                    a(href='#')
+                                        span.glyphicon.glyphicon-link
+                                        |    Another action
+                                li
+                                    a(href='#')
+                                        span.glyphicon.glyphicon-link
+                                        |    Something else here
+                                li
+                                    a(href='#')
+                                        span.glyphicon.glyphicon-link
+                                        |    Separated link
+                                li(data-toggle='modal', data-target='#settings-modal')
+                                    a(href='#')
+                                        span.glyphicon.glyphicon-cog
+                                        |    Settings
+                                li
+                                    a(href='/logout')
+                                        span.glyphicon.glyphicon-link
+                                        |    Log out
+    #settings-modal.modal.fade(role='dialog')
+        .modal-dialog
+            // Modal content
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal') ×
+                .modal-body
+                    #accordion.panel-group
+                        .panel.panel-default
+                            .panel-heading(data-toggle='collapse', data-parent='#accordion', href='#collapse1')
+                                h4.panel-title Account
+                            #collapse1.panel-collapse.collapse.in
+                                .panel-body(data='particlesjs')
+                                    //- Content
+                        .panel.panel-default
+                            .panel-heading(data-toggle='collapse', data-parent='#accordion', href='#collapse2')
+                                h4.panel-title Private
+                            #collapse2.panel-collapse.collapse
+                                .panel-body(data='cloudy')
+                                    //- Content
+                        .panel.panel-default
+                            .panel-heading(data-toggle='collapse', data-parent='#accordion', href='#collapse3')
+                                h4.panel-title Messeage
+                            #collapse3.panel-collapse.collapse
+                                .panel-body(data='bitsBlock')
+                                    //- Content
+script(src='./javascripts/application.js', type='text/javascript', charset='utf-8')
